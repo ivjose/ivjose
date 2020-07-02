@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Jose Santos IV',
     description:
-      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+      'I’m a freelance Frontend Developer specializing in React js in building a web interface with better user experiences.',
     author: '@ivjose',
     menuLinks: [
       {
@@ -25,6 +25,19 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://www.ivjose.com',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
