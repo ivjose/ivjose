@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,11 +21,23 @@ function SEO({ description, lang, meta, title }) {
             author
           }
         }
+        file(relativePath: { eq: "ivjose-og.jpg" }) {
+          childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 125, height: 125) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `,
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const { src: ogImage } = file.childImageSharp.fixed;
+
+  console.log(file, ogImage, 'DSASDD');
 
   return (
     <Helmet
@@ -40,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: 'image',
+          content: ogImage,
+        },
+        {
           property: 'og:title',
           content: title,
         },
@@ -50,6 +66,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: 'og:type',
           content: 'website',
+        },
+        {
+          property: 'og:image',
+          content: ogImage,
         },
         {
           name: 'twitter:card',
@@ -66,6 +86,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: 'twitter:description',
           content: metaDescription,
+        },
+        {
+          name: 'twitter:image',
+          content: ogImage,
         },
       ].concat(meta)}
     />
