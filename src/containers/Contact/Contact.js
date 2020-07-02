@@ -18,7 +18,7 @@ import { useState } from 'react';
 import Heading from 'components/Heading';
 import SocialMedia from 'components/SocialMedia';
 
-const URL = 'https://getform.io/f/dbf90445-7cfa-47a7-aa5f-c45f7d3f874b asdasd';
+const URL = 'https://getform.io/f/dbf90445-7cfa-47a7-aa5f-c45f7d3f874b';
 
 const Contact = () => {
   const [name, setName] = useState('');
