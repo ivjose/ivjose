@@ -17,7 +17,7 @@ const SocialMedia = ({ position, fill, fliud }) => {
     },
     {
       name: 'linkedin',
-      url: 'https://www.linkedin.com/in/jose-iv-santos-b715429b',
+      url: 'https://www.linkedin.com/in/ivjose/',
       icon: <LinkedinSvg sx={{ fill }} />,
     },
     {
