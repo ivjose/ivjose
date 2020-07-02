@@ -25,7 +25,7 @@ function SEO({ description, lang, meta, title }) {
           childImageSharp {
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
-            fixed(width: 125, height: 125) {
+            fixed(width: 1200, height: 630) {
               ...GatsbyImageSharpFixed
             }
           }
