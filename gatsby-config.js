@@ -11,15 +11,15 @@ module.exports = {
       },
       {
         name: 'Services',
-        path: '/services',
+        path: '/services/',
       },
       {
         name: 'Blog',
-        path: '/blog',
+        path: '/blog/',
       },
       {
         name: 'Contact',
-        path: '/contact',
+        path: '/contact/',
       },
     ],
   },

@@ -1,6 +1,8 @@
 /** @jsx jsx */
-import { Button, Flex, Box, Styled, jsx, Link as ThemeLink } from 'theme-ui';
+import { Button, Flex, Box, Styled, jsx } from 'theme-ui';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
+
 import AnimationWrap from 'components/AnimationWrap';
 import SocialMedia from 'components/SocialMedia';
 
@@ -60,12 +62,12 @@ const HeroLanding = () => (
           website?
         </Styled.p>
 
-        <Button as={Link} to="/contact" type="button" my={1} mr={3}>
+        <Button as={Link} to="/contact/" type="button" my={1} mr={3}>
           LET&apos;S TALK
         </Button>
 
         <Button
-          as={ThemeLink}
+          as={OutboundLink}
           href="https://docs.google.com/document/d/1gaebALsWmZ8L58KLGnij-_5Qt9jtnY8ob9MGn_c0zi8"
           target="_blank"
           rel="noopener"

@@ -86,7 +86,7 @@ const WhatDo = () => (
             {' '}
             on the fly.
           </Styled.p>
-          <Button as={Link} to="/services" type="button" mt={4}>
+          <Button as={Link} to="/services/" type="button" mt={4}>
             SEE MY SERVICES
           </Button>
         </AnimationWrap>

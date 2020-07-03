@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { Link, jsx } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import GithubSvg from 'images/svg/GithubSvg';
 
@@ -37,7 +38,7 @@ const SocialMedia = ({ position, fill, fliud }) => {
       }}
     >
       {socialMedia.map(social => (
-        <Link
+        <OutboundLink
           key={social.name}
           href={social.url}
           aria-label={`follow me at ${social.name}`}
@@ -48,7 +49,7 @@ const SocialMedia = ({ position, fill, fliud }) => {
           }}
         >
           {social.icon}
-        </Link>
+        </OutboundLink>
       ))}
     </div>
   );
