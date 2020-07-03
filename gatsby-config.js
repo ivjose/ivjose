@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Jose Santos IV',
     description:
-      'I’m a freelance Frontend Developer specializing in React js in building a web interface with better user experiences.',
+      'I’m a freelance Frontend Developer specializing in React in building a web interface with better user experiences.',
     author: '@ivjose',
     menuLinks: [
       {
