@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ivjose-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "I’m a freelance Frontend Developer specializing in React and in building a web interface with better user experiences.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jose Sanots IV <ivjosesants@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
