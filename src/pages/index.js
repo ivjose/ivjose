@@ -7,7 +7,7 @@ import Home from 'containers/Home';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="ivjose" />
+    <SEO title="Front End Developer | Jose D. Santos IV" />
     <Home />
   </Layout>
 );

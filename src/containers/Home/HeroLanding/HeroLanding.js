@@ -57,9 +57,16 @@ const HeroLanding = () => (
           Jose Santos IV
         </Styled.h1>
         <Styled.p sx={{ mb: 0 }}>
-          I’m a freelance Frontend Developer specializing in React and in
-          building a web interface with better user experiences. Do you need a
-          website?
+          I’m a freelance
+          {' '}
+          <strong>Front End Developer</strong>
+          {' '}
+          specializing in
+          {' '}
+          <strong>React</strong>
+          {' '}
+          and in building a web interface with better
+          user experiences. Do you need a website?
         </Styled.p>
 
         <Button as={Link} to="/contact/" type="button" my={1} mr={3}>
