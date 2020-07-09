@@ -6,7 +6,7 @@ import UnderConstruction from 'components/UnderConstruction';
 
 const BlogPage = () => (
   <Layout>
-    <SEO title="Blog" />
+    <SEO title="Blog | Front End Developer | Jose D. Santos IV" />
     <UnderConstruction />
   </Layout>
 );
