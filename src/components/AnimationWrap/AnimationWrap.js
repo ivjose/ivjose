@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const AnimationWrap = ({ children, animate, delay, easing, duration }) => (
   <div
-    data-sal={animate}
-    data-sal-delay={delay}
-    data-sal-easing={easing}
-    data-sal-duration={duration}
+  // data-sal={animate}
+  // data-sal-delay={delay}
+  // data-sal-easing={easing}
+  // data-sal-duration={duration}
   >
     {children}
   </div>
