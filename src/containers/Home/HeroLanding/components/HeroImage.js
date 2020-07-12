@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -18,15 +17,17 @@ import Img from 'gatsby-image';
 const HeroImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "ivjose-img.png" }) {
+      placeholderImage: file(relativePath: { eq: "ivjose-img.webp" }) {
         childImageSharp {
-          fluid(maxWidth: 500, quality: 75) {
-            ...GatsbyImageSharpFluid
+          sizes(maxWidth: 1000, quality: 75) {
+            ...GatsbyImageSharpSizes_withWebp_noBase64
           }
         }
       }
     }
   `);
+
+  console.log(data);
 
   return (
     <Img
@@ -39,7 +40,10 @@ const HeroImage = () => {
           mt: 0,
         },
       }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
+      sizes={{
+        ...data.placeholderImage.childImageSharp.sizes,
+      }}
+      // fluid={data.placeholderImage.childImageSharp.fluid}
     />
   );
 };
