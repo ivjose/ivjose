@@ -27,8 +27,6 @@ const HeroImage = () => {
     }
   `);
 
-  console.log(data);
-
   return (
     <Img
       // style={{ margin: '50px auto 0' }}
