@@ -77,8 +77,8 @@ const WhatDo = () => (
             with a
             {' '}
             <strong>fast loading page</strong>
-            {' '}
             ,
+            {' '}
             <strong>SEO ready</strong>
             , and
             {' '}
