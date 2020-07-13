@@ -1,8 +1,10 @@
 import React from 'react';
-import Page404 from 'containers/Page404';
+import loadable from '@loadable/component';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import SEO from 'components/seo';
+import Layout from 'components/layout';
+
+const Page404 = loadable(() => import('containers/Page404'));
 
 const NotFoundPage = () => (
   <Layout>

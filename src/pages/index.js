@@ -1,9 +1,10 @@
 import React from 'react';
+import loadable from '@loadable/component';
 
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 
-import Home from 'containers/Home';
+const Home = loadable(() => import('containers/Home'));
 
 const IndexPage = () => (
   <Layout>

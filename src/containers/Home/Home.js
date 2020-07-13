@@ -1,8 +1,10 @@
 import React from 'react';
-import HeroLanding from './HeroLanding';
-import WhatDo from './WhatDo';
+import loadable from '@loadable/component';
 
-// import Testimonials from './Testimonials';
+const WhatDo = loadable(() => import('./WhatDo'));
+const HeroLanding = loadable(() => import('./HeroLanding'));
+// const Testimonials = loadable(() => import('./Testimonials'));
+
 const Home = () => (
   <article>
     <HeroLanding />

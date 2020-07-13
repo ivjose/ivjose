@@ -1,8 +1,10 @@
 import React from 'react';
+import loadable from '@loadable/component';
 
-import Layout from 'components/layout';
 import SEO from 'components/seo';
-import UnderConstruction from 'components/UnderConstruction';
+import Layout from 'components/layout';
+
+const UnderConstruction = loadable(() => import('components/UnderConstruction'));
 
 const ServicesPage = () => (
   <Layout>

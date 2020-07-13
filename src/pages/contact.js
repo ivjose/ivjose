@@ -1,8 +1,10 @@
 import React from 'react';
+import loadable from '@loadable/component';
+
 import SEO from 'components/seo';
 import Layout from 'components/layout';
 
-import Contact from 'containers/Contact';
+const Contact = loadable(() => import('containers/Contact'));
 
 const ContactPage = () => (
   <Layout>
