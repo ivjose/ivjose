@@ -1,15 +1,13 @@
 import React from 'react';
-import loadable from '@loadable/component';
 
-const WhatDo = loadable(() => import('./WhatDo'));
-const HeroLanding = loadable(() => import('./HeroLanding'));
-// const Testimonials = loadable(() => import('./Testimonials'));
+import HeroLanding from './HeroLanding';
+import WhatDo from './WhatDo';
 
 const Home = () => (
   <article>
     <HeroLanding />
     <WhatDo />
-    {/* <Testimonials /> */}
+
   </article>
 );
 
