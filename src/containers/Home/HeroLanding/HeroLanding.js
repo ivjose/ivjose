@@ -77,7 +77,7 @@ const HeroLanding = () => (
           as={OutboundLink}
           href="https://docs.google.com/document/d/1gaebALsWmZ8L58KLGnij-_5Qt9jtnY8ob9MGn_c0zi8"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           variant="secondary"
           my={4}
         >

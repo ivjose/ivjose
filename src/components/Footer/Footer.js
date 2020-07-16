@@ -22,7 +22,7 @@ const Footer = () => (
         <Link
           href="https://www.gatsbyjs.org"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           sx={{ color: 'inherit' }}
         >
           Gatsby

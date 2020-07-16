@@ -95,7 +95,7 @@ const Contact = () => {
           Email:
         </small>
         <Styled.h3>
-          <Link href="mailto: ivjosesantos@gmail.com" rel="noopener">
+          <Link href="mailto: ivjosesantos@gmail.com" rel="noopener noreferrer">
             ivjosesantos@gmail.com
           </Link>
         </Styled.h3>

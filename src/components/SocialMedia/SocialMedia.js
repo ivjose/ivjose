@@ -43,7 +43,7 @@ const SocialMedia = ({ position, fill, fliud }) => {
           href={social.url}
           aria-label={`follow me at ${social.name}`}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           sx={{
             p: 2,
           }}
