@@ -8,4 +8,6 @@
   Jose D. Santos IV
 </h1>
 
-
+<p align="center">
+  I’m a freelance Front End Developer specializing in React and in building a web interface with better user experiences.
+</p>
