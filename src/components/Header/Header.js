@@ -11,24 +11,27 @@ import NavLink from './components/NavLink';
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const {
-    site: {
-      siteMetadata: { menuLinks },
-    },
-  } = useStaticQuery(
+  const { prismic } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            menuLinks {
-              name
-              path
+        prismic {
+          allNavigations {
+            edges {
+              node {
+                navigation_links {
+                  label
+                  path_url
+                }
+                branding
+              }
             }
           }
         }
       }
     `,
   );
+
+  const menuLinks = prismic.allNavigations.edges[0].node.navigation_links;
 
   return (
     <header
@@ -91,8 +94,8 @@ const Header = () => {
             }}
           >
             {menuLinks.map(link => (
-              <NavLink key={link.name} to={link.path}>
-                {link.name}
+              <NavLink key={link.label} to={link.path_url}>
+                {link.label}
               </NavLink>
             ))}
           </Flex>

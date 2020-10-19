@@ -14,24 +14,30 @@ import Img from 'gatsby-image';
  */
 
 const ImageLogo = () => {
-  const data = useStaticQuery(graphql`
+  const { prismic } = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "ivjose-logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+      prismic {
+        allNavigations {
+          edges {
+            node {
+              logo
+              logoSharp {
+                childImageSharp {
+                  fluid(maxWidth: 300) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   `);
 
-  return (
-    <Img
-      style={{ width: 50 }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  );
+  const logoUrl = prismic.allNavigations.edges[0].node.logoSharp.childImageSharp.fluid;
+  const logoAlt = prismic.allNavigations.edges[0].node.logo.alt;
+  return <Img style={{ width: 50 }} alt={logoAlt} fluid={logoUrl} />;
 };
 
 export default ImageLogo;

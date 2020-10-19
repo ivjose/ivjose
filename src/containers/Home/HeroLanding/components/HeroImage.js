@@ -17,10 +17,10 @@ import Img from 'gatsby-image';
 const HeroImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "ivjose-img.webp" }) {
+      placeholderImage: file(relativePath: { eq: "ivjose-img.png" }) {
         childImageSharp {
-          sizes(maxWidth: 1000, quality: 75) {
-            ...GatsbyImageSharpSizes_withWebp_noBase64
+          fluid(maxWidth: 1000, quality: 75) { 
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
@@ -29,7 +29,6 @@ const HeroImage = () => {
 
   return (
     <Img
-      // style={{ margin: '50px auto 0' }}
       sx={{
         maxWidth: '80%',
         mx: 'auto',
@@ -38,10 +37,9 @@ const HeroImage = () => {
           mt: 0,
         },
       }}
-      sizes={{
-        ...data.placeholderImage.childImageSharp.sizes,
+      fluid={{
+        ...data.placeholderImage.childImageSharp.fluid,
       }}
-      // fluid={data.placeholderImage.childImageSharp.fluid}
     />
   );
 };
