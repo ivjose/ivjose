@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link as PrismicLink, RichText } from 'prismic-reactjs';
 import { Link } from 'gatsby';
+import { Link as ThemeUiLink } from 'theme-ui';
 import { linkResolver } from 'utils/linkResolver';
 
 const htmlSerializer = (type, element, content, children, index) => {
@@ -19,9 +20,9 @@ const htmlSerializer = (type, element, content, children, index) => {
         ? { target: element.data.target, rel: 'noopener' }
         : {};
       result = (
-        <a href={url} {...target} key={index}>
+        <ThemeUiLink href={url} {...target} key={index}>
           {content}
-        </a>
+        </ThemeUiLink>
       );
     }
     return result;
@@ -51,9 +52,9 @@ const htmlSerializer = (type, element, content, children, index) => {
           ? { target: element.linkTo.target, rel: 'noopener' }
           : {};
         result = (
-          <a href={url} {...target}>
+          <ThemeUiLink href={url} {...target}>
             {result}
-          </a>
+          </ThemeUiLink>
         );
       }
     }
