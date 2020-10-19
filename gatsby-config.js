@@ -26,6 +26,25 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: '@prismicio/gatsby-source-prismic-graphql',
+      options: {
+        repositoryName: 'ivjose-website',
+        sharpKeys: [
+          /image|photo|picture/, // (default)
+          'logo',
+        ],
+        // pages: [
+        //   {
+        //     type: 'Blog',
+        //     match: '/:uid',
+        //     path: '/',
+        //     component: require.resolve('./src/templates/blog.js'),
+        //   },
+        // ],
+      },
+    },
+
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         // The property ID; the tracking code won't be generated without it

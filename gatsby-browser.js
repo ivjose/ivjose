@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+const {
+  registerLinkResolver,
+} = require('@prismicio/gatsby-source-prismic-graphql');
+const { linkResolver } = require('./src/utils/linkResolver');
+
+registerLinkResolver(linkResolver);
