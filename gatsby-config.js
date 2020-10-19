@@ -11,6 +11,8 @@ module.exports = {
       resolve: '@prismicio/gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'ivjose-website',
+        previews: false,
+        omitPrismicScript: true,
         sharpKeys: [
           /image|photo|picture/, // (default)
           'logo',
