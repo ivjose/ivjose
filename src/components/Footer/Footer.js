@@ -28,7 +28,7 @@ const Footer = () => (
           Gatsby
         </Link>
       </span>
-      <SocialMedia position="center" fill="background" />
+      <SocialMedia position="center" fill="background" light />
     </div>
   </Box>
 );

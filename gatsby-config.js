@@ -4,24 +4,6 @@ module.exports = {
     description:
       'I’m a freelance Frontend Developer specializing in React and in building a web interface with better user experiences.',
     author: '@ivjose',
-    menuLinks: [
-      {
-        name: 'Home',
-        path: '/',
-      },
-      {
-        name: 'Services',
-        path: '/services/',
-      },
-      {
-        name: 'Blog',
-        path: '/blog/',
-      },
-      {
-        name: 'Contact',
-        path: '/contact/',
-      },
-    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -32,6 +14,8 @@ module.exports = {
         sharpKeys: [
           /image|photo|picture/, // (default)
           'logo',
+          'icon_logo',
+          'my_image',
         ],
         // pages: [
         //   {

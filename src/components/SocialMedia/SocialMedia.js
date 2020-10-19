@@ -2,31 +2,38 @@
 import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import GithubSvg from 'images/svg/GithubSvg';
+const SocialMedia = ({ position, light, fliud }) => {
+  const { prismic } = useStaticQuery(
+    graphql`
+      query {
+        prismic {
+          allSocial_medias {
+            edges {
+              node {
+                social_links {
+                  icon_logo_dark
+                  icon_logo_light
+                  label
+                  url {
+                    ... on PRISMIC__ExternalLink {
+                      target
+                      _linkType
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
 
-import InstagramSvg from 'images/svg/InstagramSvg';
+  const socialMedia = prismic.allSocial_medias.edges[0].node.social_links;
 
-import LinkedinSvg from 'images/svg/LinkedinSvg';
-
-const SocialMedia = ({ position, fill, fliud }) => {
-  const socialMedia = [
-    {
-      name: 'github',
-      url: 'https://github.com/ivjose',
-      icon: <GithubSvg sx={{ fill }} />,
-    },
-    {
-      name: 'linkedin',
-      url: 'https://www.linkedin.com/in/ivjose/',
-      icon: <LinkedinSvg sx={{ fill }} />,
-    },
-    {
-      name: 'instagram',
-      url: 'https://www.instagram.com/ivjose',
-      icon: <InstagramSvg sx={{ fill }} />,
-    },
-  ];
   return (
     <div
       sx={{
@@ -39,16 +46,20 @@ const SocialMedia = ({ position, fill, fliud }) => {
     >
       {socialMedia.map(social => (
         <OutboundLink
-          key={social.name}
-          href={social.url}
-          aria-label={`follow me at ${social.name}`}
+          key={social.label}
+          href={social.url.url}
+          aria-label={`follow me at ${social.label}`}
           target="_blank"
           rel="noopener noreferrer"
           sx={{
             p: 2,
           }}
         >
-          {social.icon}
+          <img
+            sx={{ width: 26, height: 26, mb: 0 }}
+            src={light ? social.icon_logo_light.url : social.icon_logo_dark.url}
+            alt={social.icon_logo_dark.alt}
+          />
         </OutboundLink>
       ))}
     </div>
@@ -57,13 +68,13 @@ const SocialMedia = ({ position, fill, fliud }) => {
 
 SocialMedia.propTypes = {
   position: PropTypes.string,
-  fill: PropTypes.string,
+  light: PropTypes.bool,
   fliud: PropTypes.bool,
 };
 
 SocialMedia.defaultProps = {
   position: 'start',
-  fill: 'text',
+  light: false,
   fliud: false,
 };
 
