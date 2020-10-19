@@ -56,7 +56,9 @@ const SocialMedia = ({ position, light, fliud }) => {
           }}
         >
           <img
-            sx={{ width: 26, height: 26, mb: 0 }}
+            sx={{ height: 'auto', mb: 0, maxWidth: '100%' }}
+            width="26"
+            height="26"
             src={light ? social.icon_logo_light.url : social.icon_logo_dark.url}
             alt={social.icon_logo_dark.alt}
           />
