@@ -6,10 +6,10 @@
  */
 
 // You can delete this file if you're not using it
+const React = require('react');
 const {
   registerLinkResolver,
 } = require('@prismicio/gatsby-source-prismic-graphql');
-const React = require('react');
 
 const { linkResolver } = require('./src/utils/linkResolver');
 const MessengerChat = require('./src/components/MessengerChat').default;

@@ -2,11 +2,12 @@
 /* eslint-disable one-var */
 /* eslint-disable no-var */
 /* eslint-disable wrap-iife */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const facebookAppId = process.env.FB_PAGE_ID;
+const facebookAppId = process.env.FB_PAGE_ID || 103033888265974;
 
 const MessengerChat = () => {
+  const [isFbLoaded, setIsFbLoaded] = useState(false);
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
@@ -24,11 +25,21 @@ const MessengerChat = () => {
       js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
       fjs.parentNode.insertBefore(js, fjs);
     })(document, 'script', 'facebook-jssdk');
+
+    setIsFbLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (isFbLoaded && typeof window !== 'undefined') {
+      window.fbAsyncInit();
+    }
+    return () => {
+      setIsFbLoaded(false);
+    };
+  }, [isFbLoaded]);
 
   return (
     <>
-      <div id="fb-root" />
       <div
         className="fb-customerchat"
         attribution="setup_tool"
@@ -36,7 +47,9 @@ const MessengerChat = () => {
         theme_color="#2f8dff"
         logged_in_greeting="Hi there! Have any questions?"
         logged_out_greeting="Hi there! Have any questions?"
-      />
+      >
+        asdasd
+      </div>
     </>
   );
 };
