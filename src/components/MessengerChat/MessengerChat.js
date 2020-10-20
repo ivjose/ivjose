@@ -40,6 +40,7 @@ const MessengerChat = () => {
 
   return (
     <>
+      <div id="fb-root" />
       <div
         className="fb-customerchat"
         attribution="setup_tool"
