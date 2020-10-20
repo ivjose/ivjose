@@ -3,8 +3,9 @@
 /* eslint-disable no-var */
 /* eslint-disable wrap-iife */
 import React, { useEffect, useState } from 'react';
+import { useThemeUI } from 'theme-ui';
 
-const facebookAppId = process.env.FB_PAGE_ID || 103033888265974;
+const facebookAppId = process.env.FB_PAGE_ID;
 
 const MessengerChat = () => {
   const [isFbLoaded, setIsFbLoaded] = useState(false);
@@ -33,14 +34,15 @@ const MessengerChat = () => {
     if (isFbLoaded && typeof window !== 'undefined') {
       if (window.FB) {
         window.fbAsyncInit();
-        console.log(window.FB, 'asdasd');
       }
-    
     }
     return () => {
       setIsFbLoaded(false);
     };
   }, [isFbLoaded]);
+
+  const context = useThemeUI();
+  const { theme } = context;
 
   return (
     <>
@@ -49,7 +51,7 @@ const MessengerChat = () => {
         className="fb-customerchat"
         attribution="setup_tool"
         page_id={facebookAppId}
-        theme_color="#2f8dff"
+        theme_color={theme.colors.primary}
         logged_in_greeting="Hi there! Have any questions?"
         logged_out_greeting="Hi there! Have any questions?"
       >
