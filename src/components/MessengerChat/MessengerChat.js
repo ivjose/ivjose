@@ -27,11 +27,15 @@ const MessengerChat = () => {
     })(document, 'script', 'facebook-jssdk');
 
     setIsFbLoaded(true);
-  }, []);
+  });
 
   useEffect(() => {
     if (isFbLoaded && typeof window !== 'undefined') {
-      window.fbAsyncInit();
+      if (window.FB) {
+        window.fbAsyncInit();
+        console.log(window.FB, 'asdasd');
+      }
+    
     }
     return () => {
       setIsFbLoaded(false);
