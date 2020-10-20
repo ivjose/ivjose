@@ -5,7 +5,7 @@
 import React, { useEffect, useState } from 'react';
 import { useThemeUI } from 'theme-ui';
 
-const facebookAppId = process.env.FB_PAGE_ID;
+const facebookAppId = process.env.GATSBY_FB_PAGE_ID;
 
 const MessengerChat = () => {
   const [isFbLoaded, setIsFbLoaded] = useState(false);
