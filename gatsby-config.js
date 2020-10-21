@@ -12,7 +12,7 @@ module.exports = {
       options: {
         repositoryName: 'ivjose-website',
         previews: false,
-        // omitPrismicScript: true,
+        omitPrismicScript: true,
         sharpKeys: [
           /image|photo|picture/, // (default)
           'logo',
