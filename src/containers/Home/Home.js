@@ -1,8 +1,6 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-// const HeroLanding = React.lazy(() => import('./HeroLanding'));
-// const WhatDo = React.lazy(() => import('./WhatDo'));
 import HeroLanding from './HeroLanding';
 import WhatDo from './WhatDo';
 
