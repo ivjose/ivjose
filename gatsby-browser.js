@@ -6,24 +6,24 @@
  */
 
 // You can delete this file if you're not using it
-const React = require('react');
+// const React = require('react');
 const {
   registerLinkResolver,
 } = require('@prismicio/gatsby-source-prismic-graphql');
 
 const { linkResolver } = require('./src/utils/linkResolver');
-const MessengerChat = require('./src/components/MessengerChat').default;
+// const MessengerChat = require('./src/components/MessengerChat').default;
 
-// eslint-disable-next-line react/display-name
-// eslint-disable-next-line react/prop-types
-// eslint-disable-next-line react/display-name
-// eslint-disable-next-line react/prop-types
-// eslint-disable-next-line import/prefer-default-export
-export const wrapPageElement = ({ element }) => (
-  <>
-    {element}
-    <MessengerChat />
-  </>
-);
+// // eslint-disable-next-line react/display-name
+// // eslint-disable-next-line react/prop-types
+// // eslint-disable-next-line react/display-name
+// // eslint-disable-next-line react/prop-types
+// // eslint-disable-next-line import/prefer-default-export
+// export const wrapPageElement = ({ element }) => (
+//   <>
+//     {element}
+//     <MessengerChat />
+//   </>
+// );
 
 registerLinkResolver(linkResolver);
