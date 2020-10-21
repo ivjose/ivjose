@@ -12,7 +12,7 @@ module.exports = {
       options: {
         repositoryName: 'ivjose-website',
         previews: false,
-        omitPrismicScript: true,
+        // omitPrismicScript: true,
         sharpKeys: [
           /image|photo|picture/, // (default)
           'logo',
@@ -118,6 +118,15 @@ module.exports = {
         usePreload: true,
         usePreconnect: true,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      // options: {
+      //   devMode: true,
+      //   analyzerMode: 'server',
+      //   analyzerPort: 3001,
+      //   defaultSizes: 'gzip',
+      // },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

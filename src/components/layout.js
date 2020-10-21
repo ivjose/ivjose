@@ -7,7 +7,6 @@
  */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Global } from '@emotion/core';
