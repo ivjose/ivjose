@@ -6,7 +6,7 @@ import Page404 from 'containers/Page404';
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found | Front End Developer | Jose D. Santos IV" />
+    <SEO title="404: Not found" />
     <Page404 />
   </Layout>
 );

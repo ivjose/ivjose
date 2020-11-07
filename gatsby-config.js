@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Front End Developer | Jose D. Santos IV',
+    title: 'Jose D. Santos IV',
     description:
       'I’m a freelance Frontend Developer specializing in React and in building a web interface with better user experiences.',
     author: '@ivjose',
