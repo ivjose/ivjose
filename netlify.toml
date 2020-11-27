@@ -11,4 +11,14 @@
   for = "*.png" # js files should be set this way
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self';font-src 'self' fonts.gstatic.com;style-src 'self' fonts.googleapis.com"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Referrer-Policy = "no-referrer"
+    Feature-Policy = "microphone 'none'; geolocation 'none'"
 
