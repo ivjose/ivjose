@@ -80,7 +80,7 @@ const HeroLanding = ({ data }) => (
             <Button
               key={link.label}
               as={OutboundLink}
-              to={link.url}
+              href={link.url}
               target="_blank"
               rel="noopener noreferrer"
               variant="secondary"
